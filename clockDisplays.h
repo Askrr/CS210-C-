@@ -1,3 +1,9 @@
+/////////////////////////////////////////
+/// Header file created to use with   ///
+/// clockMain.cpp program.            ///
+/// Benjamin Leanna CS210 - Project 1 ///
+/////////////////////////////////////////
+
 time_t ttime = time(0);
 tm* local_time = localtime(&ttime);  //////////////////////////////////////////////
 int hour = local_time->tm_hour;      /// Structures the time for correct ranges ///
