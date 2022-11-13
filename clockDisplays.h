@@ -20,26 +20,38 @@ void worldClock() {
 		minute = 0;
 		second = 0;
 	}
-	if (hour <= 11) {        /////////////////////////////////
-		ampm = "A.M.";       /// this is added in so that  ///
-	}                        /// the standard clock will   ///
-	else {                   /// display the correct       ///
-		ampm = "P.M.";       /// meridiem for time of day  ///
-	}                        /////////////////////////////////
+	/////////////////////////////////
+	/// this is added in so that  ///
+	/// the standard clock will   ///
+	/// display the correct       ///
+	/// meridiem for time of day  ///
+	/////////////////////////////////
+	if (hour <= 11) {        
+		ampm = "A.M.";       
+	}                        
+	else {                   
+		ampm = "P.M.";       
+	}                        
 }
-
+/////////////////////////////////////////////////////////////
+/// Hour is taken from local time in a 24 hour format so  ///
+/// you have to sub 12 hours from it to get standard time ///
+/////////////////////////////////////////////////////////////
 int twelveClock() {
-	int hour12 = hour;      /////////////////////////////////////////////////////////////
-	if (hour > 12) {        /// Hour is taken from local time in a 24 hour format so  ///
-		hour12 = hour - 12; /// you have to sub 12 hours from it to get standard time ///
-	}                       /////////////////////////////////////////////////////////////
+	int hour12 = hour;      
+	if (hour > 12) {        
+		hour12 = hour - 12; 
+	}                       
 	return hour12;
 }
-
-string format(int time) {               ///////////////////////////////////////////////////////////
-	string format = "0";                /// formatting the time to make it a string for display ///
-	if (time >= 0 && time <= 9) {       /// this way 00 doesn't print out for single numbers    ///
-		format.append(to_string(time)); ///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////
+/// formatting the time to make it a string for display ///
+/// formatting the time to make it a string for display ///
+///////////////////////////////////////////////////////////
+string format(int time) {               
+	string format = "0";                
+	if (time >= 0 && time <= 9) {       
+		format.append(to_string(time)); 
 	}
 	else {
 		format = to_string(time);
